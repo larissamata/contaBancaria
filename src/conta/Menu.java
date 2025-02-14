@@ -1,18 +1,49 @@
 package conta;
 
 import java.util.Scanner;
+
+import conta.model.Conta;
 import contaUtil.Cores;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 
 public class Menu {
 
 	public static void main(String[] args) {
+
+		// Teste da Classe Conta
+
+		//Conta c1 = new Conta(1, 123, 1, "Adriana", 10000.0f);
+		//c1.visualizar();
+		//c1.sacar(12000.0f);
+		//c1.visualizar();
+		//c1.depositar(5000.0f);
+		//c1.visualizar();
+		
+		// Teste da classe Conta Corrente
+		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Inácio", 15000.0f, 1000.0f);
+		cc1.visualizar();
+		cc1.sacar(12000.0f);
+	    cc1.visualizar();
+	    cc1.depositar(5000.0f);
+	    cc1.visualizar();
+	    
+	    // Teste da classe Conta Poupança
+	    ContaPoupanca cp1 = new ContaPoupanca(3, 123, 2, "Itachi", 10000.0f, 15);
+	    cp1.visualizar();
+	    cp1.sacar(1000.0f);
+	    cp1.visualizar();
+	    cp1.depositar(5000.0f);
+	    cp1.visualizar();
+	    
 
 		Scanner leia = new Scanner(System.in);
 		int opcao;
 
 		while (true) {
 
-			System.out.println(Cores.TEXT_PURPLE + Cores.ANSI_BLACK_BACKGROUND +"====================================================");
+			System.out.println(Cores.TEXT_PURPLE + Cores.ANSI_BLACK_BACKGROUND
+					+ "====================================================");
 			System.out.println("                                                    ");
 			System.out.println("                     ANNE'S BANK                    ");
 			System.out.println("                                                    ");
@@ -35,7 +66,8 @@ public class Menu {
 			opcao = leia.nextInt();
 
 			if (opcao == 9) {
-				System.out.println(Cores.TEXT_BLACK_BOLD + "\nAnne's Bank - descomplicando sua vida, um saldo de cada vez!");
+				System.out.println(
+						Cores.TEXT_BLACK_BOLD + "\nAnne's Bank - descomplicando sua vida, um saldo de cada vez!");
 				sobre();
 				leia.close();
 				System.exit(0);
